@@ -22,7 +22,7 @@ document
 window.addEventListener("DOMContentLoaded", fetchTasks);
 
 function fetchTasks() {
-  fetch("http://localhost:3000/tasks")
+  fetch("https://todolist-y3xl.onrender.com")
     .then((response) => response.json())
     .then((tasks) => {
       const taskList = document.getElementById("taskList");
@@ -47,7 +47,7 @@ function fetchTasks() {
 }
 
 function addTaskToBackend(task) {
-  fetch("http://localhost:3000/tasks", {
+  fetch("https://todolist-y3xl.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -79,7 +79,7 @@ function addTaskToList(task) {
 }
 
 function deleteTaskFromBackend(taskId, taskElement) {
-  fetch(`http://localhost:3000/tasks/${taskId}`, {
+  fetch(`https://todolist-y3xl.onrender.com/tasks/${taskId}`, {
     method: "DELETE"
   }).then(() => {
     taskElement.remove();
